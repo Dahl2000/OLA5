@@ -6,7 +6,7 @@ library(dplyr)
 library(lubridate)
 library(logr)
 
-log_path <- sprintf("/tmp/Airmeas_%s.log", format(Sys.time(), "%Y%m%d"))
+log_path <- sprintf("/tmp/Airmeas")
 
 log_open(log_path)
 
