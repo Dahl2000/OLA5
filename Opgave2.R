@@ -6,7 +6,7 @@ library(dplyr)
 library(lubridate)
 library(logr)
 
-logpath <- sprintf("/tmp/Airmeas%s.log", format(Sys.time(), "%Y%m%d"))
+log_path <- sprintf("/tmp/Airmeas%s.log", format(Sys.time(), "%Y%m%d"))
 
 log_open(log_path)
 
@@ -144,10 +144,10 @@ conw <- dbConnect(MariaDB(),
                   password = "Qpal9815!"
 )
 
-dbWriteTable(conw,"Hcab",Hcab_data, append = F)
-dbWriteTable(conw,"Anholt",Anholt_data, append = F)
-dbWriteTable(conw,"AArhus",aarhus_data, append = F)
-dbWriteTable(conw,"Risoe",risoe_data, append = F)
+#dbWriteTable(conw,"Hcab",Hcab_data, append = F)
+#dbWriteTable(conw,"Anholt",Anholt_data, append = F)
+#dbWriteTable(conw,"AArhus",aarhus_data, append = F)
+#dbWriteTable(conw,"Risoe",risoe_data, append = F)
 
 
 log_print(paste(Sys.time(),"Hente databaser fra SQL"))
