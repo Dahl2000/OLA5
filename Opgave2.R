@@ -6,7 +6,7 @@ library(dplyr)
 library(lubridate)
 library(logr)
 
-log_path <- sprintf("/tmp/Airmeas")
+log_path <- sprintf("/tmp/Airmeas%s.log", format(Sys.time(), "%Y%m%d"))
 
 log_open(log_path)
 
@@ -45,8 +45,6 @@ Hcab_data <- read_html(Hcab_html) %>%
   .[[1]]  # Tag første tabel
 
 log_print(paste(Sys.time(),"Succesfuldt webscrape HCAB"))
-
-
 log_print(paste(Sys.time(),"Begynde med webscrape Anholt"))
 
 # Anholt
@@ -138,16 +136,15 @@ risoe_data <- risoe_data %>%
 # sql
 conw <- dbConnect(MariaDB(),
                   dbname = "luftdata",
-                  host = "13.61.15.156",
+                  host = "51.20.42.5",
                   port = 3306,
                   user = "dalremote",
-                  password = "zhuyuanbao11"
-)
+                  password = "Qpal9815!")
 
-#dbWriteTable(conw,"Hcab",Hcab_data, append = F)
-#dbWriteTable(conw,"Anholt",Anholt_data, append = F)
-#dbWriteTable(conw,"AArhus",aarhus_data, append = F)
-#dbWriteTable(conw,"Risoe",risoe_data, append = F)
+dbWriteTable(conw,"Hcab",Hcab_data, append = F)
+dbWriteTable(conw,"Anholt",Anholt_data, append = F)
+dbWriteTable(conw,"Aarhus",aarhus_data, append = F)
+dbWriteTable(conw,"Risoe",risoe_data, append = F)
 
 
 log_print(paste(Sys.time(),"Hente databaser fra SQL"))
