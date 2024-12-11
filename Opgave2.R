@@ -144,10 +144,10 @@ conw <- dbConnect(MariaDB(),
                   password = "Qpal9815!"
 )
 
-#dbWriteTable(conw,"Hcab",Hcab_data, append = F)
-#dbWriteTable(conw,"Anholt",Anholt_data, append = F)
-#dbWriteTable(conw,"AArhus",aarhus_data, append = F)
-#dbWriteTable(conw,"Risoe",risoe_data, append = F)
+dbWriteTable(conw,"Hcab",Hcab_data, append = F)
+dbWriteTable(conw,"Anholt",Anholt_data, append = F)
+dbWriteTable(conw,"AArhus",aarhus_data, append = F)
+dbWriteTable(conw,"Risoe",risoe_data, append = F)
 
 
 log_print(paste(Sys.time(),"Hente databaser fra SQL"))
