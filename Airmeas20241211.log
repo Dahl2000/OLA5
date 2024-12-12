@@ -1,0 +1,99 @@
+========================================================================= 
+Log Path: /tmp/log/Airmeas20241211.log 
+Program Path: /home/ubuntu/git/OLA5/Opgave2.R 
+Working Directory: /home/ubuntu 
+User Name: ubuntu 
+R Version: 4.3.3 (2024-02-29) 
+Machine: ip-172-31-38-109 x86_64 
+Operating System: Linux 6.8.0-1019-aws #21-Ubuntu SMP Wed Nov 6 21:21:49 UTC 2024 
+Base Packages: stats graphics grDevices utils datasets methods base 
+Other Packages: logr_1.3.8 common_1.1.3 lubridate_1.9.3 dplyr_1.1.4 RMariaDB_1.3.3 httr_1.4.7 xml2_1.3.6 rvest_1.0.4 
+Log Start Time: 2024-12-11 12:00:02.977694 
+========================================================================= 
+
+2024-12-11 12:00:02.978598 Nu køre script 
+
+NOTE: Log Print Time:  2024-12-11 12:00:02.978988 
+NOTE: Elapsed Time: 0.000558853149414062 secs 
+
+2024-12-11 12:00:02.979717 Begynde med webscrape HCAB 
+
+NOTE: Log Print Time:  2024-12-11 12:00:02.979999 
+NOTE: Elapsed Time: 0.00101065635681152 secs 
+
+2024-12-11 12:00:10.410264 Succesfuldt webscrape HCAB 
+
+NOTE: Log Print Time:  2024-12-11 12:00:10.410708 
+NOTE: Elapsed Time: 7.43070912361145 secs 
+
+2024-12-11 12:00:10.410982 Begynde med webscrape Anholt 
+
+NOTE: Log Print Time:  2024-12-11 12:00:10.411277 
+NOTE: Elapsed Time: 0.000568866729736328 secs 
+
+2024-12-11 12:00:16.538199 Succesfuldt webscrape Anholt 
+
+NOTE: Log Print Time:  2024-12-11 12:00:16.538665 
+NOTE: Elapsed Time: 6.1273877620697 secs 
+
+2024-12-11 12:00:16.538937 Begynde med webscrape Aarhus 
+
+NOTE: Log Print Time:  2024-12-11 12:00:16.539227 
+NOTE: Elapsed Time: 0.000562667846679688 secs 
+
+2024-12-11 12:00:18.55069 Succesfuldt webscrape Aarhus 
+
+NOTE: Log Print Time:  2024-12-11 12:00:18.551141 
+NOTE: Elapsed Time: 2.01191377639771 secs 
+
+2024-12-11 12:00:18.551481 Begynde med webscrape Risoe 
+
+NOTE: Log Print Time:  2024-12-11 12:00:18.551785 
+NOTE: Elapsed Time: 0.000644207000732422 secs 
+
+2024-12-11 12:00:20.036865 Succesfuldt webscrape Risoe 
+
+NOTE: Log Print Time:  2024-12-11 12:00:20.037346 
+NOTE: Elapsed Time: 1.48556113243103 secs 
+
+2024-12-11 12:00:20.121937 Hente databaser fra SQL 
+
+NOTE: Log Print Time:  2024-12-11 12:00:20.122494 
+NOTE: Elapsed Time: 0.0851476192474365 secs 
+
+2024-12-11 12:00:20.144265 Filtere nyeste dataer 
+
+NOTE: Log Print Time:  2024-12-11 12:00:20.144732 
+NOTE: Elapsed Time: 0.0222382545471191 secs 
+
+2024-12-11 12:00:20.153167 Tilføje filtered dataer til SQL databser 
+
+NOTE: Log Print Time:  2024-12-11 12:00:20.153689 
+NOTE: Elapsed Time: 0.0089564323425293 secs 
+
+Error: Data too long for column 'PM10' at row 1 [1406] 
+Traceback: 
+ [1] "16: result_bind(res@ptr, params)"                                   
+ [2] "15: dbBind(rs, params)"                                             
+ [3] "14: dbBind(rs, params)"                                             
+ [4] "13: dbSend(conn, statement, params, is_statement = TRUE, immediate)"
+ [5] "12: .local(conn, statement, ...)"                                   
+ [6] "11: dbSendStatement(conn, statement, ...)"                          
+ [7] "10: dbSendStatement(conn, statement, ...)"                          
+ [8] "9: dbExecute(conn, query, params = unname(as.list(value)))"         
+ [9] "8: dbExecute(conn, query, params = unname(as.list(value)))"         
+[10] "7: .nextMethod(conn = conn, name = name, value = value)"            
+[11] "6: callNextMethod()"                                                
+[12] "5: dbAppendTable(conn = conn, name = name, value = value)"          
+[13] "4: dbAppendTable(conn = conn, name = name, value = value)"          
+[14] "3: .local(conn, name, value, ...)"                                  
+[15] "2: dbWriteTable(conw, \"Hcab\", nd_Hcab, append = T)"               
+[16] "1: dbWriteTable(conw, \"Hcab\", nd_Hcab, append = T)"               
+
+NOTE: Log Print Time:  2024-12-11 12:00:20.213338 
+NOTE: Elapsed Time: 0.0596497058868408 secs 
+
+========================================================================= 
+Log End Time: 2024-12-11 12:00:20.214689 
+Log Elapsed Time: 0 00:00:17 
+========================================================================= 
